@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class View : MonoBehaviour
 {
-    public Transform position;
+    public new Transform gameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,6 @@ public class View : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = position.position;
+        transform.position = gameObject.position;
     }
 }
