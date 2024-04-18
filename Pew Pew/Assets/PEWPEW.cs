@@ -31,7 +31,7 @@ public class PEWPEW : MonoBehaviour
         RaycastHit hit;
 
         GameObject Pew = Instantiate(Bullet, GunTip.position, GunTip.rotation);
-        Bullet.GetComponent<Rigidbody>().AddForce(GunTip.forward * 90f, ForceMode.Impulse);
+        Pew.GetComponent<Rigidbody>().AddForce(GunTip.forward * 90f, ForceMode.Impulse);
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -44,5 +44,6 @@ public class PEWPEW : MonoBehaviour
                 Debug.Log(hit.transform.name);
             }
         }
+        Destroy(Pew,0.6f);
     }
 }
